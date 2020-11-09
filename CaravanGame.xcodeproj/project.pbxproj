@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F0666EC2559659A00935C68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0666EB2559659A00935C68 /* AppDelegate.swift */; };
+		1F0666EE2559659A00935C68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0666ED2559659A00935C68 /* SceneDelegate.swift */; };
+		1F0666F02559659A00935C68 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0666EF2559659A00935C68 /* SplashViewController.swift */; };
+		1F0666F32559659A00935C68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0666F12559659A00935C68 /* Main.storyboard */; };
+		1F0666F62559659A00935C68 /* CaravanGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F0666F42559659A00935C68 /* CaravanGame.xcdatamodeld */; };
+		1F0666F82559659B00935C68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0666F72559659B00935C68 /* Assets.xcassets */; };
+		1F0666FB2559659B00935C68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0666F92559659B00935C68 /* LaunchScreen.storyboard */; };
+		1F06670925596C4100935C68 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F06670825596C4100935C68 /* MainViewController.swift */; };
+		1F06670C25596CA800935C68 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F06670B25596CA800935C68 /* GameViewController.swift */; };
+		1F06670F25596D6000935C68 /* SplashPresenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F06670E25596D6000935C68 /* SplashPresenterController.swift */; };
+		1F0667122559744300935C68 /* MainPresenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0667112559744300935C68 /* MainPresenterController.swift */; };
+		1F066715255974A300935C68 /* GamePresenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F066714255974A300935C68 /* GamePresenterController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F0666E82559659A00935C68 /* CaravanGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaravanGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0666EB2559659A00935C68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F0666ED2559659A00935C68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F0666EF2559659A00935C68 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1F0666F22559659A00935C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1F0666F52559659A00935C68 /* CaravanGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CaravanGame.xcdatamodel; sourceTree = "<group>"; };
+		1F0666F72559659B00935C68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F0666FA2559659B00935C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F0666FC2559659B00935C68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F06670825596C4100935C68 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1F06670B25596CA800935C68 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		1F06670E25596D6000935C68 /* SplashPresenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenterController.swift; sourceTree = "<group>"; };
+		1F0667112559744300935C68 /* MainPresenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterController.swift; sourceTree = "<group>"; };
+		1F066714255974A300935C68 /* GamePresenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenterController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F0666E52559659900935C68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F0666DF2559659900935C68 = {
+			isa = PBXGroup;
+			children = (
+				1F0666EA2559659A00935C68 /* CaravanGame */,
+				1F0666E92559659A00935C68 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F0666E92559659A00935C68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F0666E82559659A00935C68 /* CaravanGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F0666EA2559659A00935C68 /* CaravanGame */ = {
+			isa = PBXGroup;
+			children = (
+				1F0667052559665C00935C68 /* Presenters */,
+				1F0667042559665000935C68 /* Models */,
+				1F0667032559664500935C68 /* Views */,
+				1F0666EB2559659A00935C68 /* AppDelegate.swift */,
+				1F0666ED2559659A00935C68 /* SceneDelegate.swift */,
+				1F0666F12559659A00935C68 /* Main.storyboard */,
+				1F0666F72559659B00935C68 /* Assets.xcassets */,
+				1F0666F92559659B00935C68 /* LaunchScreen.storyboard */,
+				1F0666FC2559659B00935C68 /* Info.plist */,
+				1F0666F42559659A00935C68 /* CaravanGame.xcdatamodeld */,
+			);
+			path = CaravanGame;
+			sourceTree = "<group>";
+		};
+		1F0667032559664500935C68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F0666EF2559659A00935C68 /* SplashViewController.swift */,
+				1F06670825596C4100935C68 /* MainViewController.swift */,
+				1F06670B25596CA800935C68 /* GameViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F0667042559665000935C68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F0667052559665C00935C68 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				1F06670E25596D6000935C68 /* SplashPresenterController.swift */,
+				1F0667112559744300935C68 /* MainPresenterController.swift */,
+				1F066714255974A300935C68 /* GamePresenterController.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F0666E72559659900935C68 /* CaravanGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F0666FF2559659B00935C68 /* Build configuration list for PBXNativeTarget "CaravanGame" */;
+			buildPhases = (
+				1F0666E42559659900935C68 /* Sources */,
+				1F0666E52559659900935C68 /* Frameworks */,
+				1F0666E62559659900935C68 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CaravanGame;
+			productName = CaravanGame;
+			productReference = 1F0666E82559659A00935C68 /* CaravanGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F0666E02559659900935C68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					1F0666E72559659900935C68 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = 1F0666E32559659900935C68 /* Build configuration list for PBXProject "CaravanGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F0666DF2559659900935C68;
+			productRefGroup = 1F0666E92559659A00935C68 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F0666E72559659900935C68 /* CaravanGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F0666E62559659900935C68 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0666FB2559659B00935C68 /* LaunchScreen.storyboard in Resources */,
+				1F0666F82559659B00935C68 /* Assets.xcassets in Resources */,
+				1F0666F32559659A00935C68 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F0666E42559659900935C68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F0666F02559659A00935C68 /* SplashViewController.swift in Sources */,
+				1F0667122559744300935C68 /* MainPresenterController.swift in Sources */,
+				1F0666EC2559659A00935C68 /* AppDelegate.swift in Sources */,
+				1F0666F62559659A00935C68 /* CaravanGame.xcdatamodeld in Sources */,
+				1F066715255974A300935C68 /* GamePresenterController.swift in Sources */,
+				1F0666EE2559659A00935C68 /* SceneDelegate.swift in Sources */,
+				1F06670C25596CA800935C68 /* GameViewController.swift in Sources */,
+				1F06670F25596D6000935C68 /* SplashPresenterController.swift in Sources */,
+				1F06670925596C4100935C68 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1F0666F12559659A00935C68 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0666F22559659A00935C68 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1F0666F92559659B00935C68 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F0666FA2559659B00935C68 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F0666FD2559659B00935C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F0666FE2559659B00935C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F0667002559659B00935C68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CaravanGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CaravanGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F0667012559659B00935C68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CaravanGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CaravanGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F0666E32559659900935C68 /* Build configuration list for PBXProject "CaravanGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0666FD2559659B00935C68 /* Debug */,
+				1F0666FE2559659B00935C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F0666FF2559659B00935C68 /* Build configuration list for PBXNativeTarget "CaravanGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0667002559659B00935C68 /* Debug */,
+				1F0667012559659B00935C68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F0666F42559659A00935C68 /* CaravanGame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F0666F52559659A00935C68 /* CaravanGame.xcdatamodel */,
+			);
+			currentVersion = 1F0666F52559659A00935C68 /* CaravanGame.xcdatamodel */;
+			path = CaravanGame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1F0666E02559659900935C68 /* Project object */;
+}
