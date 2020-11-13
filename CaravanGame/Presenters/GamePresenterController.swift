@@ -9,6 +9,12 @@ import Foundation
 
 class GamePresenter: GamePresenterProtocol {
     
+    func setCards() {
+        <#code#>
+    }
+    
+    
+    
     var gameViewProtocol : GameViewProtocol
     
     init (gameViewProtocol: GameViewProtocol){
@@ -18,5 +24,5 @@ class GamePresenter: GamePresenterProtocol {
 }
 
 protocol GamePresenterProtocol {
-            
+        func setCards()
 }

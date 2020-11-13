@@ -18,10 +18,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
+                    <connections>
+                        <segue destination="qI1-hq-dmL" kind="presentation" identifier="segueToMain" modalPresentationStyle="fullScreen" id="KJL-yt-oBy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="356"/>
+            <point key="canvasLocation" x="-2168" y="366"/>
         </scene>
         <!--MainVC-->
         <scene sceneID="xFf-mg-txp">
@@ -33,10 +36,14 @@
                         <viewLayoutGuide key="safeArea" id="Oyt-yD-wIf"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="fkZ-Xt-5z3"/>
+                    <connections>
+                        <segue destination="Tbd-8B-Xc3" kind="presentation" identifier="segueToGame" modalPresentationStyle="fullScreen" id="uxf-az-NSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbg-HO-Sbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541" y="-181"/>
+            <point key="canvasLocation" x="-848" y="366"/>
         </scene>
         <!--GameVC-->
         <scene sceneID="6bW-3M-MFk">
@@ -48,10 +55,11 @@
                         <viewLayoutGuide key="safeArea" id="9G9-Uj-RAi"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5he-OD-riB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92k-rC-216" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541" y="806"/>
+            <point key="canvasLocation" x="451" y="366"/>
         </scene>
     </scenes>
     <resources>
