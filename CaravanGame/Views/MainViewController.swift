@@ -18,9 +18,13 @@ class MainViewController: UIViewController, MainViewProtocol {
         self.mainPresenterProtocol = MainPresenter(mainViewProtocol: self)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.mainPresenterProtocol?.goToGame()
+    }
 
 }
 
-protocol MainViewProtocol {
+protocol MainViewProtocol : class {
     //ADD FUNCTIONS
 }

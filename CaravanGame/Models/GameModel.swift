@@ -9,11 +9,11 @@ import Foundation
 
 class GameModel {
     
-    var timeToChoose: Int
-    var betweenTensCard: Float
-    var betweenFivesCard: Float
-    var lifeDownCard: Float
-    var lifeUpCard: Float
+    var timeToChoose: Int = 0
+    var betweenTensCard: Float = 0
+    var betweenFivesCard: Float = 0
+    var lifeDownCard: Float = 0
+    var lifeUpCard: Float = 0
     
     init(difficultSettings: String) {
     

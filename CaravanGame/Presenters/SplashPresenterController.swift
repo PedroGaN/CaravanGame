@@ -6,10 +6,15 @@
 //
 
 import Foundation
+import UIKit
 
 class SplashPresenter: SplashPresenterProtocol {
     
     var splashViewProtocol : SplashViewProtocol
+    
+    func goToMain() {
+        (self.splashViewProtocol as! SplashViewController).performSegue(withIdentifier: "segueToMain", sender: (Any).self)
+    }
     
     init (splashViewProtocol: SplashViewProtocol){
         self.splashViewProtocol = splashViewProtocol
@@ -18,5 +23,5 @@ class SplashPresenter: SplashPresenterProtocol {
 }
 
 protocol SplashPresenterProtocol {
-            
+    func goToMain()
 }

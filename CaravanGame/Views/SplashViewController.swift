@@ -13,15 +13,19 @@ class SplashViewController: UIViewController, SplashViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.s
+        // Do any additional setup after loading the view.
         
         self.splashPresenterProtocol = SplashPresenter(splashViewProtocol: self)
-        
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.splashPresenterProtocol?.goToMain()
     }
 
 }
 
-protocol SplashViewProtocol {
+protocol SplashViewProtocol : class {
     //ADD FUNCTIONS
 
 }

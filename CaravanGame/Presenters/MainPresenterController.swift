@@ -11,12 +11,19 @@ class MainPresenter: MainPresenterProtocol {
     
     var mainViewProtocol : MainViewProtocol
     
+    
+    func goToGame() {
+        (self.mainViewProtocol as! MainViewController).performSegue(withIdentifier: "segueToGame", sender: (Any).self)
+    }
+    
+    
+    
     init (mainViewProtocol: MainViewProtocol){
         self.mainViewProtocol = mainViewProtocol
     }
     
 }
 
-protocol MainPresenterProtocol {
-            
+protocol MainPresenterProtocol{
+    func goToGame()
 }
