@@ -108,8 +108,8 @@
 		1F0667052559665C00935C68 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				1F06670E25596D6000935C68 /* SplashPresenterController.swift */,
 				1F0667112559744300935C68 /* MainPresenterController.swift */,
+				1F06670E25596D6000935C68 /* SplashPresenterController.swift */,
 				1F066714255974A300935C68 /* GamePresenterController.swift */,
 			);
 			path = Presenters;

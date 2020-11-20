@@ -15,8 +15,12 @@ class GameViewController: UIViewController, GameViewProtocol {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //self.gamePresenterProtocol = GamePresenter(gameViewProtocol: self)
+        self.gamePresenterProtocol = GamePresenter(gameViewProtocol: self)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        gamePresenterProtocol?.showDifficultyAlert()
     }
 
 }

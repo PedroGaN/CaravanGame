@@ -10,10 +10,16 @@ import UIKit
 
 class GamePresenter: GamePresenterProtocol {
     
+    var gameViewProtocol : GameViewProtocol
+    
     var cardOne : CardModel?
     var cardTwo : CardModel?
     var gameSetting : GameModel?
     var difficultySetting : String?
+    
+    init (gameViewProtocol: GameViewProtocol){
+        self.gameViewProtocol = gameViewProtocol
+    }
 
     func setGameSettings(difficultSettings: String) {
         
@@ -23,7 +29,7 @@ class GamePresenter: GamePresenterProtocol {
         
     }
     
-    func showDifficultyAlert(gameViewController: GameViewController) {
+    func showDifficultyAlert() {
         
         let actionSheetMenu = UIAlertController(title: nil, message: "Choose Difficulty", preferredStyle: .actionSheet)
         
@@ -43,7 +49,7 @@ class GamePresenter: GamePresenterProtocol {
             self.difficultySetting = "veryHard"
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { action in
-            gameViewController.dismiss(animated: true, completion: nil)
+            self.returnToMain()
         }
         
         actionSheetMenu.addAction(veryEasyAction)
@@ -53,7 +59,7 @@ class GamePresenter: GamePresenterProtocol {
         actionSheetMenu.addAction(veryHardAction)
         actionSheetMenu.addAction(cancelAction)
         
-        gameViewController.present(actionSheetMenu, animated: true, completion: nil)
+        (gameViewProtocol as! GameViewController).present(actionSheetMenu, animated: true, completion: nil)
     }
     
     func timeOut() {
@@ -64,12 +70,17 @@ class GamePresenter: GamePresenterProtocol {
         
     }
     
+    func returnToMain() {
+        (self.gameViewProtocol as! GameViewController).performSegue(withIdentifier: "segueReturnToMain", sender: (Any).self)
+    }
+    
 }
 
 protocol GamePresenterProtocol {
     func setGameSettings(difficultSettings: String)
     func setCards()
-    func showDifficultyAlert(gameViewController: GameViewController)
+    func showDifficultyAlert()
     func timeOut()
     func chosedCard()
+    func returnToMain()
 }
