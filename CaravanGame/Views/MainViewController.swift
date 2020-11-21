@@ -19,7 +19,7 @@ class MainViewController: UIViewController, MainViewProtocol {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func NewGameAction(_ sender: Any) {
         self.mainPresenterProtocol?.goToGame()
     }
 

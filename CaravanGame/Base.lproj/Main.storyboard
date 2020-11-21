@@ -33,8 +33,27 @@
                     <view key="view" contentMode="scaleToFill" id="EbY-wU-JD2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Ew-YLj">
+                                <rect key="frame" x="160" y="414" width="94" height="78"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" label="New Game"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="NewGameAction:" destination="qI1-hq-dmL" eventType="touchUpInside" id="a1A-Vv-Wjm"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Oyt-yD-wIf"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="Oyt-yD-wIf" firstAttribute="trailing" secondItem="yds-Ew-YLj" secondAttribute="trailing" constant="160" id="16e-GN-w5B"/>
+                            <constraint firstItem="yds-Ew-YLj" firstAttribute="top" secondItem="Oyt-yD-wIf" secondAttribute="top" constant="370" id="UZf-lw-ugY"/>
+                            <constraint firstItem="Oyt-yD-wIf" firstAttribute="bottom" secondItem="yds-Ew-YLj" secondAttribute="bottom" constant="370" id="fJa-WN-puP"/>
+                            <constraint firstItem="yds-Ew-YLj" firstAttribute="leading" secondItem="Oyt-yD-wIf" secondAttribute="leading" constant="160" id="jXO-a8-fet"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fkZ-Xt-5z3"/>
                     <connections>
@@ -66,9 +85,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="uxf-az-NSe"/>
         <segue reference="FB3-rU-dqQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
