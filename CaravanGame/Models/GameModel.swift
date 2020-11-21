@@ -9,11 +9,12 @@ import Foundation
 
 class GameModel {
     
+    var numberOfTries: Int = 3
     var timeToChoose: Int = 0
-    var betweenTensCard: Float = 0
-    var betweenFivesCard: Float = 0
-    var lifeDownCard: Float = 0
-    var lifeUpCard: Float = 0
+    var betweenTensCard: Int = 0
+    var betweenFivesCard: Int = 0
+    var lifeDownCard: Int = 0
+    var lifeUpCard: Int = 0
     
     init(difficultSettings: String) {
     
@@ -38,12 +39,12 @@ class GameModel {
             self.lifeUpCard = 95
         case "hard":
             self.timeToChoose = 2
-            self.betweenTensCard = 67.5
+            self.betweenTensCard = 67
             self.betweenFivesCard = 50
             self.lifeDownCard = 85
             self.lifeUpCard = 95
         case "veryHard":
-            self.timeToChoose = 5
+            self.timeToChoose = 1
             self.betweenTensCard = 60
             self.betweenFivesCard = 40
             self.lifeDownCard = 80
