@@ -232,7 +232,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uxf-az-NSe"/>
         <segue reference="FB3-rU-dqQ"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -126,14 +126,14 @@ class GamePresenter: GamePresenterProtocol {
                 if self.cardOne?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
                     self.gameSetting?.numberOfTries -= 1
                     self.playerValue = tempPlayerValue
-                }
+                } else if self.cardOne?.lifeUp ?? false { self.gameSetting?.numberOfTries += 1 }
                 break
             case 2:
                 self.playerValue += self.cardTwo?.value ?? 0
                 if self.cardTwo?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
                     self.gameSetting?.numberOfTries -= 1
                     self.playerValue = tempPlayerValue
-                }
+                } else if self.cardTwo?.lifeUp ?? false { self.gameSetting?.numberOfTries += 1 }
                 break
             default:
                 print("ERROR")
