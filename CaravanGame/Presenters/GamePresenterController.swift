@@ -12,12 +12,15 @@ class GamePresenter: GamePresenterProtocol {
     
     var gameViewProtocol : GameViewProtocol
     
+    var view : GameViewController?
+    
     var cardOne : CardModel?
     var cardTwo : CardModel?
     var gameSetting : GameModel?
     
     init (gameViewProtocol: GameViewProtocol){
         self.gameViewProtocol = gameViewProtocol
+        self.view = gameViewProtocol as? GameViewController
     }
     
     func setCards() {
@@ -55,7 +58,7 @@ class GamePresenter: GamePresenterProtocol {
     
     func showDifficultyAlert() {
         
-        let actionSheetMenu = UIAlertController(title: nil, message: "Choose Difficulty", preferredStyle: .actionSheet)
+        let actionSheetMenu = UIAlertController(title: nil, message: "Choose Difficulty", preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
         
         let veryEasyAction = UIAlertAction(title: "Very Easy", style: .default) { action in
             self.gameSetting = GameModel(difficultSettings: "veryEasy")
@@ -87,6 +90,13 @@ class GamePresenter: GamePresenterProtocol {
         actionSheetMenu.addAction(hardAction)
         actionSheetMenu.addAction(veryHardAction)
         actionSheetMenu.addAction(cancelAction)
+        
+        if let popoverController = actionSheetMenu.popoverPresentationController {
+            
+            popoverController.sourceView = self.view?.view
+            
+            //popoverController.sourceRect = (x: self.view?.view.bounds.midX, y: self.view?.view.bounds.midY, width: 0, height: 0)
+        }
         
         (gameViewProtocol as! GameViewController).present(actionSheetMenu, animated: true, completion: nil)
     }

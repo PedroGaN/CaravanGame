@@ -25,30 +25,35 @@ class GameModel {
             self.betweenFivesCard = 90
             self.lifeDownCard = 101
             self.lifeUpCard = 101
+            break
         case "easy":
             self.timeToChoose = 4
             self.betweenTensCard = 85
             self.betweenFivesCard = 70
             self.lifeDownCard = 101
             self.lifeUpCard = 101
+            break
         case "normal":
             self.timeToChoose = 3
             self.betweenTensCard = 75
             self.betweenFivesCard = 60
             self.lifeDownCard = 90
             self.lifeUpCard = 95
+            break
         case "hard":
             self.timeToChoose = 2
             self.betweenTensCard = 67
             self.betweenFivesCard = 50
             self.lifeDownCard = 85
             self.lifeUpCard = 95
+            break
         case "veryHard":
             self.timeToChoose = 1
             self.betweenTensCard = 60
             self.betweenFivesCard = 40
             self.lifeDownCard = 80
             self.lifeUpCard = 95
+            break
         default:
             print("ERROR")
         }
