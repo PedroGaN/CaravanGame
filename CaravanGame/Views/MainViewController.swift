@@ -23,7 +23,6 @@ class MainViewController: UIViewController, MainViewProtocol {
     @IBAction func NewGameAction(_ sender: Any) {
         self.mainPresenterProtocol?.goToGame()
     }
-
     @IBAction func dismissLayoutInstructionsAction(_ sender: Any) {
         self.mainPresenterProtocol?.dismissLayoutInstruction()
     }

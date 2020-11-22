@@ -18,6 +18,7 @@ class GameModel {
     let winMessage: String = "CONGRATULATION!\nYou won"
     let loseMessage: String = "YIKES!\nYou lost"
     
+    //Se determina los valores de juego en función de la dificultad que haya establecido el jugador
     init(difficultSettings: String) {
     
         switch difficultSettings {

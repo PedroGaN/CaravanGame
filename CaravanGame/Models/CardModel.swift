@@ -18,7 +18,7 @@ class CardModel {
         setValues(isValid: isValid, cardType: cardType, playerValue: playerValue)
     }
     
-    
+    //Función para determinar los valores de la carta en función del escenario aleatorio
     func setValues(isValid : Bool, cardType: String, playerValue: Int){
         
         switch cardType{
@@ -56,7 +56,7 @@ class CardModel {
         
     }
     
-    
+    //Función para asegurar al menos un valor válido
     func setCardNumericValue(isValid: Bool, playerValue: Int, inBetweenNumbers: Int){
         
         if (isValid){

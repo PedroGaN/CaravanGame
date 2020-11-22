@@ -23,6 +23,7 @@ class MainPresenter: MainPresenterProtocol {
         (self.mainViewProtocol as! MainViewController).performSegue(withIdentifier: "segueToGame", sender: (Any).self)
     }
     
+    //En este metodo creo un muestro un UIAlertController para mostrar las instrucciones de juego
     func showInstructions() {
             
         let actionSheetMenu = UIAlertController(title: nil, message: self.instructionsMessage, preferredStyle: .alert)
@@ -45,11 +46,11 @@ class MainPresenter: MainPresenterProtocol {
         
     }
     
+    //Estos dos metoodos se utilizan para mostrar u ocultar las instrucciones de layout
     func showLayoutInstructions() {
         self.view?.layoutInstructionsButton.isEnabled = true
         self.view?.layoutInstructionsButton.isHidden = false
     }
-    
     func dismissLayoutInstruction() {
         self.view?.layoutInstructionsButton.isEnabled = false
         self.view?.layoutInstructionsButton.isHidden = true

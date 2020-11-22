@@ -27,6 +27,7 @@ class GamePresenter: GamePresenterProtocol {
         self.view = gameViewProtocol as? GameViewController
     }
     
+    //En esta función se crean las cartas que se van a mostrar en pantalla siguiente unas especificaciones concretas en función del escenario aleatoria surgido
     func setCards() {
         let number = Int.random(in: 1...100)
         let validCheck : Bool = Bool.random()
@@ -69,6 +70,7 @@ class GamePresenter: GamePresenterProtocol {
         print(number)*/
     }
     
+    //Un UIAlertController para pedirle al jugador que elija una dificultad
     func showDifficultyAlert() {
         
         let actionSheetMenu = UIAlertController(title: nil, message: "Choose Difficulty", preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? .alert : .actionSheet)
@@ -104,18 +106,21 @@ class GamePresenter: GamePresenterProtocol {
         actionSheetMenu.addAction(veryHardAction)
         actionSheetMenu.addAction(cancelAction)
         
+        //Le indico al UIAlertController la vista fuente donde se tiene que mostrar [Para evitar problemas en iPad]
         if let popoverController = actionSheetMenu.popoverPresentationController {
             popoverController.sourceView = self.view?.view }
         
         self.view?.present(actionSheetMenu, animated: true, completion: nil)
     }
     
+    //Si el jugador se queda sin tiempo se le resta un intento, se restablece el tiempo del contador y se comprueba el estado de la partida
     func timeOut() {
         self.gameSetting?.numberOfTries -= 1
         self.timerValue = self.gameSetting?.timeToChoose ?? 404
         self.checkGameStatus(playerValue: self.playerValue)
     }
     
+    //Cuando el jugador elige una carta se comprueban los valores que tendría y el tipo de carta para o bien penalizar al jugador o bien que continue la partida de manera normal
     func chosedCard(chosedCard: Int) {
         
         let tempPlayerValue = self.playerValue
@@ -143,19 +148,22 @@ class GamePresenter: GamePresenterProtocol {
         self.checkGameStatus(playerValue: self.playerValue)
     }
     
+    //Comprobación de si ha surgido alguna EndCondition en la partida
     func checkGameStatus(playerValue: Int) {
         if playerValue == 21 {showEndGameAlert(endMessage: self.endGame(winStatus: true))}
-        else if self.gameSetting?.numberOfTries == 0 || playerValue < 0 || playerValue > 21 {
+        else if self.gameSetting?.numberOfTries == 0 {
             self.view?.timer?.invalidate()
             showEndGameAlert(endMessage: self.endGame(winStatus: false)) }
         else{self.setCards()}
     }
     
+    //Mini función para mostrar qúe mensaje en función de como ha terminado la partida
     func endGame(winStatus: Bool) -> String {
         if winStatus {return self.gameSetting?.winMessage ?? "ERROR"}
         else {return self.gameSetting?.loseMessage ?? "ERROR"}
     }
     
+    //Muestra el cuadro de fin de partida usando un UIAlertController
     func showEndGameAlert(endMessage: String) {
         
         let actionSheetMenu = UIAlertController(title: nil, message: endMessage, preferredStyle: .alert)
