@@ -23,6 +23,9 @@ class MainViewController: UIViewController, MainViewProtocol {
         self.mainPresenterProtocol?.goToGame()
     }
 
+    @IBAction func ShowInstructionsAction(_ sender: Any) {
+        self.mainPresenterProtocol?.showInstructions()
+    }
 }
 
 protocol MainViewProtocol : class {

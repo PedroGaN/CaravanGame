@@ -10,6 +10,7 @@ import UIKit
 class GameViewController: UIViewController, GameViewProtocol {
 
     var gamePresenterProtocol : GamePresenterProtocol?
+    var timer: Timer?
     
     @IBOutlet weak var cardOneButton: UIButton!
     @IBOutlet weak var cardTwoButton: UIButton!
@@ -29,18 +30,17 @@ class GameViewController: UIViewController, GameViewProtocol {
     @IBAction func cardOneButtonAction(_ sender: Any) {
         gamePresenterProtocol?.chosedCard(chosedCard: 1)
     }
-    
     @IBAction func cardTwoButtonAction(_ sender: Any) {
         gamePresenterProtocol?.chosedCard(chosedCard: 2)
     }
-    
-    
     @IBAction func returnToMainAction(_ sender: Any) {
         gamePresenterProtocol?.returnToMain()
     }
     override func viewDidAppear(_ animated: Bool) {
         gamePresenterProtocol?.showDifficultyAlert()
     }
+    
+
 
 }
 

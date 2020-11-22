@@ -64,15 +64,27 @@
                                     <action selector="NewGameAction:" destination="qI1-hq-dmL" eventType="touchUpInside" id="a1A-Vv-Wjm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-hV-ACf">
+                                <rect key="frame" x="133" y="422" width="148" height="56"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
+                                <state key="normal" title="Instructions">
+                                    <color key="titleColor" red="0.86135161153204953" green="0.9812129068419464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="ShowInstructionsAction:" destination="qI1-hq-dmL" eventType="touchUpInside" id="8XQ-bp-AYm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oyt-yD-wIf"/>
                         <color key="backgroundColor" red="0.080625794226239625" green="0.12419168312447519" blue="0.32347689152081227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HNh-hV-ACf" firstAttribute="top" secondItem="yds-Ew-YLj" secondAttribute="bottom" constant="27" id="5b4-2W-bD6"/>
                             <constraint firstItem="yds-Ew-YLj" firstAttribute="centerY" secondItem="EbY-wU-JD2" secondAttribute="centerY" id="Ck6-Xv-anv"/>
                             <constraint firstItem="yds-Ew-YLj" firstAttribute="centerX" secondItem="EbY-wU-JD2" secondAttribute="centerX" id="Tn2-zJ-41L"/>
                             <constraint firstItem="sYT-MD-zxN" firstAttribute="top" secondItem="EbY-wU-JD2" secondAttribute="top" id="YjQ-CK-Rop"/>
                             <constraint firstItem="Oyt-yD-wIf" firstAttribute="trailing" secondItem="sYT-MD-zxN" secondAttribute="trailing" id="aW2-Te-F2d"/>
                             <constraint firstItem="sYT-MD-zxN" firstAttribute="leading" secondItem="Oyt-yD-wIf" secondAttribute="leading" id="rwE-vN-SF1"/>
+                            <constraint firstItem="HNh-hV-ACf" firstAttribute="centerX" secondItem="EbY-wU-JD2" secondAttribute="centerX" id="s1Z-oT-iAB"/>
                             <constraint firstAttribute="bottom" secondItem="sYT-MD-zxN" secondAttribute="bottom" id="zAM-F4-1I5"/>
                         </constraints>
                     </view>
@@ -106,7 +118,7 @@
                                     <constraint firstAttribute="height" constant="90" id="ZVe-Lw-jqd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
-                                <state key="normal" title="CardOne" backgroundImage="moon_01">
+                                <state key="normal" backgroundImage="moon_01">
                                     <color key="titleColor" red="0.95177664969999998" green="0.93913399799999997" blue="0.54525565629999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -120,14 +132,14 @@
                                     <constraint firstAttribute="height" constant="90" id="pbG-6s-6jH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="50"/>
-                                <state key="normal" title="CardTwo" backgroundImage="moon_02">
+                                <state key="normal" backgroundImage="moon_02">
                                     <color key="titleColor" red="0.87453301760000002" green="0.921319797" blue="0.50858082449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cardTwoButtonAction:" destination="Tbd-8B-Xc3" eventType="touchUpInside" id="nQ4-n2-XoF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDB-5D-NMH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDB-5D-NMH">
                                 <rect key="frame" x="167" y="80" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Med-aW-cyi"/>
@@ -137,8 +149,8 @@
                                 <color key="textColor" red="1" green="0.909198350695958" blue="0.58382381810213491" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlayerPoints" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-m0-sFp">
-                                <rect key="frame" x="157" y="556" width="100" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-m0-sFp">
+                                <rect key="frame" x="157" y="436" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GlO-5K-YAw"/>
                                     <constraint firstAttribute="height" constant="100" id="cm0-zb-M28"/>
@@ -147,7 +159,7 @@
                                 <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tries" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-gV-Br4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-gV-Br4">
                                 <rect key="frame" x="177" y="180" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.25676130327959945" green="0.23685902969261038" blue="0.27157360406091369" alpha="0.35616438356164382" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -181,7 +193,7 @@
                             <constraint firstItem="3MB-gV-Br4" firstAttribute="top" secondItem="9G9-Uj-RAi" secondAttribute="top" constant="180" id="8uS-Jd-gOg"/>
                             <constraint firstItem="gDB-5D-NMH" firstAttribute="top" secondItem="9G9-Uj-RAi" secondAttribute="top" constant="80" id="HHN-wh-Adf"/>
                             <constraint firstItem="wN9-34-35J" firstAttribute="centerY" secondItem="5gd-tA-XJM" secondAttribute="centerY" id="Hmi-UX-cUO"/>
-                            <constraint firstItem="9G9-Uj-RAi" firstAttribute="bottom" secondItem="RHx-m0-sFp" secondAttribute="bottom" constant="80" id="ID9-gd-wvj"/>
+                            <constraint firstItem="9G9-Uj-RAi" firstAttribute="bottom" secondItem="RHx-m0-sFp" secondAttribute="bottom" constant="200" id="ID9-gd-wvj"/>
                             <constraint firstItem="RHx-m0-sFp" firstAttribute="centerX" secondItem="5gd-tA-XJM" secondAttribute="centerX" id="J6y-Al-fvk"/>
                             <constraint firstItem="f54-Ln-jqD" firstAttribute="leading" secondItem="9G9-Uj-RAi" secondAttribute="leading" constant="30" id="SY1-tW-gf9"/>
                             <constraint firstItem="9G9-Uj-RAi" firstAttribute="bottom" secondItem="f54-Ln-jqD" secondAttribute="bottom" constant="40" id="jAn-fC-bCt"/>
@@ -206,6 +218,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="uxf-az-NSe"/>
         <segue reference="FB3-rU-dqQ"/>
     </inferredMetricsTieBreakers>
     <resources>

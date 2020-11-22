@@ -31,33 +31,38 @@ class GamePresenter: GamePresenterProtocol {
         let number = Int.random(in: 1...100)
         let validCheck : Bool = Bool.random()
         if number > (self.gameSetting?.lifeUpCard ?? 0) {
-            self.cardOne = CardModel(isValid: validCheck, cardType: "lifeUpCard", playerValue: 0)
-            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "lifeUpCard", playerValue: 0)}
-            else {self.cardTwo = CardModel(isValid: true, cardType: "lifeUpCard", playerValue: 0)}
+            self.cardOne = CardModel(isValid: validCheck, cardType: "lifeUpCard", playerValue: self.playerValue)
+            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "lifeUpCard", playerValue: self.playerValue)}
+            else {self.cardTwo = CardModel(isValid: true, cardType: "lifeUpCard", playerValue: self.playerValue)}
         }
         else if number > (self.gameSetting?.lifeDownCard ?? 0) {
-            self.cardOne = CardModel(isValid: validCheck, cardType: "lifeDownCard", playerValue: 0)
-            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "lifeDownCard", playerValue: 0)}
-            else {self.cardTwo = CardModel(isValid: true, cardType: "lifeDownCard", playerValue: 0)}
+            self.cardOne = CardModel(isValid: validCheck, cardType: "lifeDownCard", playerValue: self.playerValue)
+            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "lifeDownCard", playerValue: self.playerValue)}
+            else {self.cardTwo = CardModel(isValid: true, cardType: "lifeDownCard", playerValue: self.playerValue)}
         }
         else if number > (self.gameSetting?.betweenTensCard ?? 0) {
-            self.cardOne = CardModel(isValid: validCheck, cardType: "betweenTensCard", playerValue: 0)
-            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "betweenTensCard", playerValue: 0)}
-            else {self.cardTwo = CardModel(isValid: true, cardType: "betweenTensCard", playerValue: 0)}
+            self.cardOne = CardModel(isValid: validCheck, cardType: "betweenTensCard", playerValue: self.playerValue)
+            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "betweenTensCard", playerValue: self.playerValue)}
+            else {self.cardTwo = CardModel(isValid: true, cardType: "betweenTensCard", playerValue: self.playerValue)}
         }
         else if number > (self.gameSetting?.betweenFivesCard ?? 0) {
-            self.cardOne = CardModel(isValid: validCheck, cardType: "betweenFivesCard", playerValue: 0)
-            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "betweenFivesCard", playerValue: 0)}
-            else {self.cardTwo = CardModel(isValid: true, cardType: "betweenFivesCard", playerValue: 0)}
+            self.cardOne = CardModel(isValid: validCheck, cardType: "betweenFivesCard", playerValue: self.playerValue)
+            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "betweenFivesCard", playerValue: self.playerValue)}
+            else {self.cardTwo = CardModel(isValid: true, cardType: "betweenFivesCard", playerValue: self.playerValue)}
         }
         else {
-            self.cardOne = CardModel(isValid: validCheck, cardType: "standardCard", playerValue: 0)
-            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "standardCard", playerValue: 0)}
-            else {self.cardTwo = CardModel(isValid: true, cardType: "standardCard", playerValue: 0)}
+            self.cardOne = CardModel(isValid: validCheck, cardType: "standardCard", playerValue: self.playerValue)
+            if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "standardCard", playerValue: self.playerValue)}
+            else {self.cardTwo = CardModel(isValid: true, cardType: "standardCard", playerValue: self.playerValue)}
         }
         
+        if self.view?.timer == nil {
+            self.view?.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in self.updateTimerValue()}
+            self.view?.timer?.tolerance = 0.2
+        }
         self.timerValue = self.gameSetting?.timeToChoose ?? 404
         self.setLayoutValues()
+        
         /*print(self.cardOne?.value ?? 38)
         print(self.cardTwo?.value ?? 72)
         print(self.gameSetting?.lifeDownCard ?? 100)
@@ -107,6 +112,8 @@ class GamePresenter: GamePresenterProtocol {
     
     func timeOut() {
         self.gameSetting?.numberOfTries -= 1
+        self.timerValue = self.gameSetting?.timeToChoose ?? 404
+        self.checkGameStatus(playerValue: self.playerValue)
     }
     
     func chosedCard(chosedCard: Int) {
@@ -123,7 +130,7 @@ class GamePresenter: GamePresenterProtocol {
                 break
             case 2:
                 self.playerValue += self.cardTwo?.value ?? 0
-                if self.cardOne?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
+                if self.cardTwo?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
                     self.gameSetting?.numberOfTries -= 1
                     self.playerValue = tempPlayerValue
                 }
@@ -139,6 +146,7 @@ class GamePresenter: GamePresenterProtocol {
     func checkGameStatus(playerValue: Int) {
         if playerValue == 21 {showEndGameAlert(endMessage: self.endGame(winStatus: true))}
         else if self.gameSetting?.numberOfTries == 0 || playerValue < 0 || playerValue > 21 {
+            self.view?.timer?.invalidate()
             showEndGameAlert(endMessage: self.endGame(winStatus: false)) }
         else{self.setCards()}
     }
@@ -173,7 +181,13 @@ class GamePresenter: GamePresenterProtocol {
         else {self.view?.cardTwoButton.setBackgroundImage(self.cardButtonImageValid, for: UIControl.State.normal)}
         self.view?.tryCountLabel.text = (String(self.gameSetting?.numberOfTries ?? 404))
         self.view?.playerPointsLabel.text = (String(self.playerValue))
-        self.view?.timerCountLabel.text = (String(self.gameSetting?.timeToChoose ?? 404))
+        self.view?.timerCountLabel.text = (String(self.timerValue))
+    }
+    
+    func updateTimerValue() {
+        self.timerValue -= 1
+        self.view?.timerCountLabel.text = (String(self.timerValue))
+        if self.timerValue <= 0 {self.timeOut()}
     }
     
     func returnToMain() {
@@ -192,5 +206,6 @@ protocol GamePresenterProtocol {
     func endGame(winStatus: Bool) -> String
     func showEndGameAlert(endMessage: String)
     func setLayoutValues()
+    func updateTimerValue()
 
 }
