@@ -14,6 +14,8 @@ class GamePresenter: GamePresenterProtocol {
     
     var view : GameViewController?
     
+    var playerValue : Int = 10
+    var timerValue : Int = 10
     var cardOne : CardModel?
     var cardTwo : CardModel?
     var gameSetting : GameModel?
@@ -51,6 +53,9 @@ class GamePresenter: GamePresenterProtocol {
             if validCheck {self.cardTwo = CardModel(isValid: false, cardType: "standardCard", playerValue: 0)}
             else {self.cardTwo = CardModel(isValid: true, cardType: "standardCard", playerValue: 0)}
         }
+        
+        self.timerValue = self.gameSetting?.timeToChoose ?? 404
+        self.setLayoutValues()
         /*print(self.cardOne?.value ?? 38)
         print(self.cardTwo?.value ?? 72)
         print(number)*/
@@ -92,36 +97,61 @@ class GamePresenter: GamePresenterProtocol {
         actionSheetMenu.addAction(cancelAction)
         
         if let popoverController = actionSheetMenu.popoverPresentationController {
-            
-            popoverController.sourceView = self.view?.view
-            
-            //popoverController.sourceRect = (x: self.view?.view.bounds.midX, y: self.view?.view.bounds.midY, width: 0, height: 0)
-        }
+            popoverController.sourceView = self.view?.view }
         
-        (gameViewProtocol as! GameViewController).present(actionSheetMenu, animated: true, completion: nil)
+        self.view?.present(actionSheetMenu, animated: true, completion: nil)
     }
     
     func timeOut() {
         self.gameSetting?.numberOfTries -= 1
     }
     
-    func chosedCard(playerValue: Int, cardValue: Int) -> Int {
-        let newValue = playerValue + cardValue
+    func chosedCard(chosedCard: Int) {
         
-        return newValue
+        switch chosedCard {
+            case 1:
+                self.playerValue += self.cardOne?.value ?? 0
+                break
+            case 2:
+                self.playerValue += self.cardTwo?.value ?? 0
+                break
+            default:
+                print("ERROR")
+                break
+        }
+        
+        self.checkGameStatus(playerValue: self.playerValue)
     }
     
-    func checkGameStatus(playerValue: Int) -> Bool {
+    func checkGameStatus(playerValue: Int) {
         if playerValue == 21 || self.gameSetting?.numberOfTries == 0 {
-            return true
+            showEndGameAlert(endMessage: self.endGame())
         }else{
-            return false
+            self.setCards()
         }
     }
     
     func endGame() -> String {
-        if self.gameSetting?.numberOfTries == 0 {return "winButton"}
-        else {return "loseButton"}
+        if self.gameSetting?.numberOfTries == 0 {return self.gameSetting?.winMessage ?? "ERROR"}
+        else {return self.gameSetting?.loseMessage ?? "ERROR"}
+    }
+    
+    func showEndGameAlert(endMessage: String) {
+        
+        let actionSheetMenu = UIAlertController(title: nil, message: endMessage, preferredStyle: .alert)
+        
+        if let popoverController = actionSheetMenu.popoverPresentationController {
+            popoverController.sourceView = self.view?.view }
+        
+        self.view?.present(actionSheetMenu, animated: true, completion: nil)
+    }
+    
+    func setLayoutValues() {
+        self.view?.cardOneButton.setTitle(String(self.cardOne?.value ?? 404), for: UIControl.State.normal)
+        self.view?.cardTwoButton.setTitle(String(self.cardTwo?.value ?? 404), for: UIControl.State.normal)
+        self.view?.tryCountLabel.setValue(String(self.gameSetting?.numberOfTries ?? 404), forKey: "key")
+        self.view?.playerPointsLabel.setValue(String(self.playerValue), forKey: "key")
+        self.view?.timerCountLabel.setValue(String(self.gameSetting?.timeToChoose ?? 404), forKey: "key")
     }
     
     func returnToMain() {
@@ -134,9 +164,11 @@ protocol GamePresenterProtocol {
     func setCards()
     func showDifficultyAlert()
     func timeOut()
-    func chosedCard(playerValue: Int, cardValue: Int) -> Int
+    func chosedCard(chosedCard: Int)
     func returnToMain()
-    func checkGameStatus(playerValue: Int) -> Bool
+    func checkGameStatus(playerValue: Int)
     func endGame() -> String
+    func showEndGameAlert(endMessage: String)
+    func setLayoutValues()
 
 }

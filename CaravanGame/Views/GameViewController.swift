@@ -18,7 +18,6 @@ class GameViewController: UIViewController, GameViewProtocol {
     @IBOutlet weak var timerCountLabel: UILabel!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

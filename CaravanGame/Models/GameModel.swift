@@ -15,6 +15,8 @@ class GameModel {
     var betweenFivesCard: Int = 0
     var lifeDownCard: Int = 0
     var lifeUpCard: Int = 0
+    let winMessage: String = "CONGRATULATION!\nYou won"
+    let loseMessage: String = "YIKES!\nYou lost"
     
     init(difficultSettings: String) {
     
