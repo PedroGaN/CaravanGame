@@ -27,9 +27,11 @@ class GameViewController: UIViewController, GameViewProtocol {
     }
     
     @IBAction func cardOneButtonAction(_ sender: Any) {
+        gamePresenterProtocol?.chosedCard(chosedCard: 1)
     }
     
     @IBAction func cardTwoButtonAction(_ sender: Any) {
+        gamePresenterProtocol?.chosedCard(chosedCard: 2)
     }
     
     

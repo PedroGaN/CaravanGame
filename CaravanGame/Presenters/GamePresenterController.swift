@@ -13,6 +13,8 @@ class GamePresenter: GamePresenterProtocol {
     var gameViewProtocol : GameViewProtocol
     
     var view : GameViewController?
+    let cardButtonImageValid : UIImage? = UIImage(named: "moon_01")
+    let cardButtonImageTrap : UIImage? = UIImage(named: "moon_02")
     
     var playerValue : Int = 10
     var timerValue : Int = 10
@@ -26,7 +28,7 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func setCards() {
-        let number = Int.random(in: 1...10)
+        let number = Int.random(in: 1...100)
         let validCheck : Bool = Bool.random()
         if number > (self.gameSetting?.lifeUpCard ?? 0) {
             self.cardOne = CardModel(isValid: validCheck, cardType: "lifeUpCard", playerValue: 0)
@@ -58,6 +60,7 @@ class GamePresenter: GamePresenterProtocol {
         self.setLayoutValues()
         /*print(self.cardOne?.value ?? 38)
         print(self.cardTwo?.value ?? 72)
+        print(self.gameSetting?.lifeDownCard ?? 100)
         print(number)*/
     }
     
@@ -108,12 +111,22 @@ class GamePresenter: GamePresenterProtocol {
     
     func chosedCard(chosedCard: Int) {
         
+        let tempPlayerValue = self.playerValue
+        
         switch chosedCard {
             case 1:
                 self.playerValue += self.cardOne?.value ?? 0
+                if self.cardOne?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
+                    self.gameSetting?.numberOfTries -= 1
+                    self.playerValue = tempPlayerValue
+                }
                 break
             case 2:
                 self.playerValue += self.cardTwo?.value ?? 0
+                if self.cardOne?.lifeDown ?? false || self.playerValue < 0 || self.playerValue > 21 {
+                    self.gameSetting?.numberOfTries -= 1
+                    self.playerValue = tempPlayerValue
+                }
                 break
             default:
                 print("ERROR")
@@ -124,21 +137,26 @@ class GamePresenter: GamePresenterProtocol {
     }
     
     func checkGameStatus(playerValue: Int) {
-        if playerValue == 21 || self.gameSetting?.numberOfTries == 0 {
-            showEndGameAlert(endMessage: self.endGame())
-        }else{
-            self.setCards()
-        }
+        if playerValue == 21 {showEndGameAlert(endMessage: self.endGame(winStatus: true))}
+        else if self.gameSetting?.numberOfTries == 0 || playerValue < 0 || playerValue > 21 {
+            showEndGameAlert(endMessage: self.endGame(winStatus: false)) }
+        else{self.setCards()}
     }
     
-    func endGame() -> String {
-        if self.gameSetting?.numberOfTries == 0 {return self.gameSetting?.winMessage ?? "ERROR"}
+    func endGame(winStatus: Bool) -> String {
+        if winStatus {return self.gameSetting?.winMessage ?? "ERROR"}
         else {return self.gameSetting?.loseMessage ?? "ERROR"}
     }
     
     func showEndGameAlert(endMessage: String) {
         
         let actionSheetMenu = UIAlertController(title: nil, message: endMessage, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Oke", style: .cancel) { action in
+            self.returnToMain()
+        }
+        
+        actionSheetMenu.addAction(cancelAction)
         
         if let popoverController = actionSheetMenu.popoverPresentationController {
             popoverController.sourceView = self.view?.view }
@@ -148,10 +166,14 @@ class GamePresenter: GamePresenterProtocol {
     
     func setLayoutValues() {
         self.view?.cardOneButton.setTitle(String(self.cardOne?.value ?? 404), for: UIControl.State.normal)
+        if self.cardOne?.lifeDown ?? false {self.view?.cardOneButton.setBackgroundImage(self.cardButtonImageTrap, for: UIControl.State.normal)}
+        else {self.view?.cardOneButton.setBackgroundImage(self.cardButtonImageValid, for: UIControl.State.normal)}
         self.view?.cardTwoButton.setTitle(String(self.cardTwo?.value ?? 404), for: UIControl.State.normal)
-        self.view?.tryCountLabel.setValue(String(self.gameSetting?.numberOfTries ?? 404), forKey: "key")
-        self.view?.playerPointsLabel.setValue(String(self.playerValue), forKey: "key")
-        self.view?.timerCountLabel.setValue(String(self.gameSetting?.timeToChoose ?? 404), forKey: "key")
+        if self.cardTwo?.lifeDown ?? false {self.view?.cardTwoButton.setBackgroundImage(self.cardButtonImageTrap, for: UIControl.State.normal)}
+        else {self.view?.cardTwoButton.setBackgroundImage(self.cardButtonImageValid, for: UIControl.State.normal)}
+        self.view?.tryCountLabel.text = (String(self.gameSetting?.numberOfTries ?? 404))
+        self.view?.playerPointsLabel.text = (String(self.playerValue))
+        self.view?.timerCountLabel.text = (String(self.gameSetting?.timeToChoose ?? 404))
     }
     
     func returnToMain() {
@@ -167,7 +189,7 @@ protocol GamePresenterProtocol {
     func chosedCard(chosedCard: Int)
     func returnToMain()
     func checkGameStatus(playerValue: Int)
-    func endGame() -> String
+    func endGame(winStatus: Bool) -> String
     func showEndGameAlert(endMessage: String)
     func setLayoutValues()
 
