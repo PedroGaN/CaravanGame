@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController, MainViewProtocol {
 
     var mainPresenterProtocol : MainPresenterProtocol?
+    @IBOutlet weak var layoutInstructionsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class MainViewController: UIViewController, MainViewProtocol {
         self.mainPresenterProtocol?.goToGame()
     }
 
+    @IBAction func dismissLayoutInstructionsAction(_ sender: Any) {
+        self.mainPresenterProtocol?.dismissLayoutInstruction()
+    }
     @IBAction func ShowInstructionsAction(_ sender: Any) {
         self.mainPresenterProtocol?.showInstructions()
     }

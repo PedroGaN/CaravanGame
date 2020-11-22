@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="SplashVC" title="SplashVC" id="BYZ-38-t0r" customClass="SplashViewController" customModule="CaravanGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bc" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-Bo-Uyg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.91316121819999996" green="0.93850773570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
@@ -43,14 +43,14 @@
             <objects>
                 <viewController storyboardIdentifier="MainVC" title="MainVC" id="qI1-hq-dmL" customClass="MainViewController" customModule="CaravanGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EbY-wU-JD2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bc" translatesAutoresizingMaskIntoConstraints="NO" id="sYT-MD-zxN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yds-Ew-YLj">
-                                <rect key="frame" x="139.66666666666666" y="341" width="134.99999999999997" height="54"/>
+                                <rect key="frame" x="139.66666666666666" y="421" width="134.99999999999997" height="54"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" label="New Game"/>
                                 <constraints>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNh-hV-ACf">
-                                <rect key="frame" x="133" y="422" width="148" height="56"/>
+                                <rect key="frame" x="133" y="502" width="148" height="56"/>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="28"/>
                                 <state key="normal" title="Instructions">
                                     <color key="titleColor" red="0.86135161153204953" green="0.9812129068419464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,12 +74,25 @@
                                     <action selector="ShowInstructionsAction:" destination="qI1-hq-dmL" eventType="touchUpInside" id="8XQ-bp-AYm"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-bf-s0u" userLabel="LayoutInstructions">
+                                <rect key="frame" x="30" y="131" width="354" height="634"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="634" id="p77-5F-3bp"/>
+                                    <constraint firstAttribute="width" constant="354" id="r9G-UC-yYl"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="layout_instructions"/>
+                                <connections>
+                                    <action selector="dismissLayoutInstructionsAction:" destination="qI1-hq-dmL" eventType="touchUpInside" id="7vy-e6-Dsi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Oyt-yD-wIf"/>
                         <color key="backgroundColor" red="0.080625794226239625" green="0.12419168312447519" blue="0.32347689152081227" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="I9u-bf-s0u" firstAttribute="centerX" secondItem="EbY-wU-JD2" secondAttribute="centerX" id="1t4-uJ-M6i"/>
                             <constraint firstItem="HNh-hV-ACf" firstAttribute="top" secondItem="yds-Ew-YLj" secondAttribute="bottom" constant="27" id="5b4-2W-bD6"/>
                             <constraint firstItem="yds-Ew-YLj" firstAttribute="centerY" secondItem="EbY-wU-JD2" secondAttribute="centerY" id="Ck6-Xv-anv"/>
+                            <constraint firstItem="I9u-bf-s0u" firstAttribute="centerY" secondItem="EbY-wU-JD2" secondAttribute="centerY" id="TDU-CT-hX2"/>
                             <constraint firstItem="yds-Ew-YLj" firstAttribute="centerX" secondItem="EbY-wU-JD2" secondAttribute="centerX" id="Tn2-zJ-41L"/>
                             <constraint firstItem="sYT-MD-zxN" firstAttribute="top" secondItem="EbY-wU-JD2" secondAttribute="top" id="YjQ-CK-Rop"/>
                             <constraint firstItem="Oyt-yD-wIf" firstAttribute="trailing" secondItem="sYT-MD-zxN" secondAttribute="trailing" id="aW2-Te-F2d"/>
@@ -90,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fkZ-Xt-5z3"/>
                     <connections>
+                        <outlet property="layoutInstructionsButton" destination="I9u-bf-s0u" id="eWO-eO-WEH"/>
                         <segue destination="Tbd-8B-Xc3" kind="presentation" identifier="segueToGame" modalPresentationStyle="fullScreen" id="uxf-az-NSe"/>
                     </connections>
                 </viewController>
@@ -102,7 +116,7 @@
             <objects>
                 <viewController storyboardIdentifier="GameVC" title="GameVC" id="Tbd-8B-Xc3" customClass="GameViewController" customModule="CaravanGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5gd-tA-XJM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="game_bc" image="game_bc_04" translatesAutoresizingMaskIntoConstraints="NO" id="VY3-TG-fHo">
@@ -111,7 +125,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="game_bc"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cardOne" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wN9-34-35J">
-                                <rect key="frame" x="88.333333333333314" y="323" width="90" height="90"/>
+                                <rect key="frame" x="88.333333333333314" y="403" width="90" height="90"/>
                                 <accessibility key="accessibilityConfiguration" identifier="cardOne" label="CardOne"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="B5r-FH-fzH"/>
@@ -126,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhJ-rK-wbO">
-                                <rect key="frame" x="235.66666666666663" y="323" width="90" height="90"/>
+                                <rect key="frame" x="235.66666666666663" y="403" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="5VE-Z1-S8x"/>
                                     <constraint firstAttribute="height" constant="90" id="pbG-6s-6jH"/>
@@ -140,7 +154,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDB-5D-NMH">
-                                <rect key="frame" x="167" y="80" width="80" height="80"/>
+                                <rect key="frame" x="167" y="124" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Med-aW-cyi"/>
                                     <constraint firstAttribute="width" constant="80" id="UtH-8x-pvW"/>
@@ -150,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHx-m0-sFp">
-                                <rect key="frame" x="157" y="436" width="100" height="100"/>
+                                <rect key="frame" x="157" y="562" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GlO-5K-YAw"/>
                                     <constraint firstAttribute="height" constant="100" id="cm0-zb-M28"/>
@@ -160,7 +174,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MB-gV-Br4">
-                                <rect key="frame" x="177" y="180" width="60" height="60"/>
+                                <rect key="frame" x="177" y="224" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.25676130327959945" green="0.23685902969261038" blue="0.27157360406091369" alpha="0.35616438356164382" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="e0E-jw-vGP"/>
@@ -171,7 +185,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f54-Ln-jqD" userLabel="Back">
-                                <rect key="frame" x="30" y="655.33333333333337" width="40" height="41.333333333333371"/>
+                                <rect key="frame" x="30" y="781.33333333333337" width="40" height="41.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7ZR-K4-uq6"/>
                                     <constraint firstAttribute="width" constant="40" id="SvV-9X-0sL"/>
@@ -223,6 +237,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="game_bc_04" width="414" height="736"/>
+        <image name="layout_instructions" width="118" height="211.33332824707031"/>
         <image name="main_bc" width="269.66665649414062" height="486.33334350585938"/>
         <image name="moon_01" width="42.666667938232422" height="42.666667938232422"/>
         <image name="moon_02" width="42.666667938232422" height="42.666667938232422"/>
